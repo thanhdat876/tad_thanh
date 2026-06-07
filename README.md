@@ -1,4 +1,35 @@
+# Assistant Interceptor
 
+Một ứng dụng nhẹ nhàng, hiệu quả được thiết kế để thay thế trợ lý ảo mặc định bằng ứng dụng bạn yêu thích trên các điện thoại chạy hệ điều hành tùy biến (như OriginOS, FuntouchOS).
+
+## Vấn đề
+Nhiều thiết bị điện thoại nội địa (Trung Quốc) cài đặt sẵn các trợ lý ảo mặc định (như BlueLM) không thể thay đổi thông qua cài đặt hệ thống thông thường. Điều này gây khó khăn khi bạn muốn sử dụng các trợ lý quốc tế như Google Gemini hoặc ChatGPT.
+
+## Giải pháp: Chiến thuật "Delayed Overlay Kill"
+**Assistant Interceptor** sử dụng quyền Trợ năng (Accessibility Service) để can thiệp vào quy trình mở ứng dụng:
+
+1. **Ghi đè tốc độ cao (Fresh Launch):** Ngay khi phát hiện trợ lý mặc định khởi chạy, ứng dụng lập tức phóng ứng dụng thay thế của bạn lên màn hình ngay lập tức mà không có độ trễ.
+2. **Dọn dẹp bóng ma (Delayed Kill):** Tận dụng đặc tính hoạt ảnh của hệ thống, sau 700ms, ứng dụng sẽ thực hiện lệnh "Quay lại" (Back) để âm thầm đóng trợ lý mặc định, đảm bảo không có xung đột ứng dụng hay tốn tài nguyên chạy ngầm.
+
+## Tính năng chính
+* **Thay thế liền mạch:** Trải nghiệm chuyển đổi nhanh chóng, không gây giật lag.
+* **Cơ chế chống lặp (Debounce):** Đảm bảo ứng dụng chỉ kích hoạt một lần, tránh lỗi vòng lặp hoặc bật đúp.
+* **Tối ưu tài nguyên:** Sử dụng Kotlin Coroutines giúp ứng dụng hoạt động cực kỳ nhẹ nhàng, không hao pin.
+
+## Yêu cầu thiết lập
+Để ứng dụng hoạt động ổn định trên các dòng máy có cơ chế quản lý nền gắt gao (như Vivo/iQOO), hãy thực hiện:
+
+1. **Cấp quyền Trợ năng:** Bật dịch vụ trong `Cài đặt > Trợ năng`.
+2. **Cho phép tự khởi động (Auto-start):** Trong cài đặt quản lý ứng dụng.
+3. **Tắt tối ưu hóa pin:** Đặt thành chế độ "Không hạn chế".
+4. **Khóa trong đa nhiệm:** Khóa ứng dụng để tránh bị hệ thống đóng băng.
+
+## Cấu hình
+Bạn có thể dễ dàng điều chỉnh thời gian phản hồi trong mã nguồn (`AssistantInterceptorService.kt`):
+* `DELAY_KILL_TIME = 700L`: Điều chỉnh thời gian chờ để dọn dẹp trợ lý mặc định (đơn vị: mili giây).
+
+## Đóng góp
+Dự án được tạo ra nhằm tối ưu hóa trải nghiệm người dùng cá nhân. Mọi đề xuất cải thiện về hiệu năng hoặc tính tương thích đều được hoan nghênh.
 
 # Run and deploy your AI Studio app
 
