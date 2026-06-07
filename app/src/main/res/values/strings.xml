@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Assistant Interceptor</string>
+    <string name="accessibility_service_description">Dịch vụ giúp phát hiện và chặn trợ lý ảo mặc định trên điện thoại thông qua quyền trợ năng để tự động thay thế bằng Google Gemini.</string>
+</resources>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F4F6FE">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header Title Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="32dp"
+                android:background="#535F8A"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assistant Interceptor"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1C1E" />
+
+                <TextView
+                    android:id="@+id/tv_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hệ thống chuyển đổi trợ lý ảo đa năng"
+                    android:textSize="12sp"
+                    android:textColor="#585E72" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- CARD 1: Accessibility License/Status Details -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background_xml"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tv_accessibility_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quyền Trợ Năng: Chưa Bật"
+                android:textColor="#BA1A1A"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cần cấp quyền này để hệ thống dập tắt các trợ lý ảo mặc định và khởi động các ứng dụng thay thế mượt mà."
+                android:textSize="12sp"
+                android:textColor="#585E72"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btn_open_settings"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Mở Cài Đặt Trợ Năng"
+                android:backgroundTint="#535F8A"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- CARD 2: Two clusters to choose App A and App B -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background_xml"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CẤU HÌNH LIÊN KẾT ỨNG DỤNG"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#535F8A"
+                android:layout_marginBottom="16dp"
+                android:letterSpacing="0.08" />
+
+            <!-- CLUSTER 1: App A (Blocked App) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bước 1: Ứng dụng gốc cần chặn (App A)"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1A1C1E"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tv_blocked_app_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đang chặn: Trợ lý Jovi (com.vivo.agent)"
+                android:textSize="14sp"
+                android:textColor="#585E72"
+                android:background="#F0F1F6"
+                android:padding="10dp"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btn_select_blocked_app"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Chọn App Cần Chặn (App A)"
+                android:backgroundTint="#D1E4FF"
+                android:textColor="#001D36"
+                android:textSize="13sp"
+                android:padding="0dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E1E2EC"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- CLUSTER 2: App B (Launch App) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bước 2: Ứng dụng thế chỗ muốn bật (App B)"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1A1C1E"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tv_launch_app_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sẽ bật: Google Gemini (com.google.android.apps.bard)"
+                android:textSize="14sp"
+                android:textColor="#585E72"
+                android:background="#F0F1F6"
+                android:padding="10dp"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btn_select_launch_app"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Chọn App Muốn Bật (App B)"
+                android:backgroundTint="#E1E2EC"
+                android:textColor="#1A1C1E"
+                android:textSize="13sp"
+                android:padding="0dp" />
+        </LinearLayout>
+
+        <!-- CARD 3: Instruction Warnings specific to Vivo/iQOO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#E1E2EC"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚠️ LƯU Ý ĐẶC BIỆT CHO TRUNG QUỐC (VIVO/iQOO):"
+                android:textColor="#1A1C1E"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="4dp"
+                android:text="1. Bật tự khởi động (Auto-start) trong hệ thống.\n2. Tắt Tối ưu hóa pin: Chọn Không hạn chế hoặc 'Cho phép hao phí điện năng ở mức cao' (High background power consumption).\n3. Khóa ứng dụng chặn này trong cửa sổ đa nhiệm.\n4. BẮT BUỘC: bật quyền 'Khởi chạy trong nền' (Start in background) hoặc 'Hiển thị Pop-up' để trợ năng có quyền mở Gemini từ background."
+                android:textColor="#44474E"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

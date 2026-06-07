@@ -1,0 +1,6 @@
+{
+  "name": "Assistant Interceptor",
+  "description": "Chặn trợ lý ảo mặc định của Vivo/iQOO và tự động thay thế bằng Google Gemini.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
